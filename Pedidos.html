@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <title>O Toldo Poderoso</title>
+        <base target="_blank"/>
+        <link rel="stylesheet" type="text/css" href="estilos3.css" />
+    </head>
+
+    <body>
+        <header>
+           
+            <address class="ender">Rua Tolda Coberta, 246</br>Tel: (21) 91122-3344</br>
+                <a href="malito:contato@topode.com.br">contato@topode.com.br</a>
+            </address>
+            <img class="imgLogo" src="imagens/OToldoDeitado.png"/>
+
+        </header>
+    <nav>
+    <ul><li><a href="Otodopode2.html">Apresentação</a></li>
+    <li><a href="Materiais.html">Materiais</a></li>
+    <li><a href="Modelos.html">Modelos</a></li>
+    <li><a href="Pedidos.html">Pedidos</a></li></ul>
+    </nav>
+    
+    <script>
+
+        var matToldo = ['---', 'Tec. Acrílico', 'Poliester', 'Lona'];
+        var matToldopreco = [0, 75, 55, 35];
+        var matCober = ['---', 'Tec. Acrílico', 'Poliester', 'Polipropileno', 'Policarbonato', 'Tec. Sintético'];
+        var matCoberpreco = [0, 75, 55, 210, 250, 65];
+        var modToldo = ['---', 'Triangular', 'Fixo', 'Retrátil'];
+        var modToldopreco = [0, 330, 320, 350];
+        var modCober = ['---', 'Triangular', 'Comprida', 'Abaulada'];
+        var modCoberpreco = [0, 300, 360, 260];
+        
+        function mudaValores(CselMaterial,CselModelo) {
+           var html = '';
+          
+          for (var i = 0;i < CselMaterial.length; i++) {
+            html += "<option value="+CselMaterial[i]+">" + CselMaterial[i] + "</option>"
+          }
+          
+          document.getElementById('CselMaterial').innerHTML = html;
+        
+          html = ''
+        
+          for (var i = 0;i < CselModelo.length; i++) {
+            html += "<option value="+CselModelo[i]+">" + CselModelo[i] + "</option>"
+          }
+          
+          document.getElementById('CselModelo').innerHTML = html;
+        }
+        
+        function incluiVal(mat){
+            var modeloselecionado = document.getElementById("CselModelo");
+            var materialselecionado = document.getElementById("CselMaterial");
+            
+            var precomaterial = 0;
+            var precomodelo = 0;
+        
+            var toldoselecionado = document.getElementById("tipProdTol").checked;
+            var descricao = '';
+            if (toldoselecionado) { 
+                descricao += "Toldo ";
+                precomaterial = matToldopreco[materialselecionado.selectedIndex];
+                precomodelo = modToldopreco[modeloselecionado.selectedIndex];
+        
+            } else {
+                descricao += "Cob. ";
+                precomaterial = matCoberpreco[materialselecionado.selectedIndex];
+                precomodelo = modCoberpreco[modeloselecionado.selectedIndex];
+            }
+            descricao += modeloselecionado.options[modeloselecionado.selectedIndex].text;
+            descricao += " de ";
+            descricao += materialselecionado.options[materialselecionado.selectedIndex].text;
+            document.getElementById("ClinhaProdSel").value = descricao;
+            document.getElementById("Cvalor").value = 2*precomaterial+precomodelo;
+        
+        }
+        
+        function addCompra() {
+            var modeloselecionado = document.getElementById("CselModelo");
+           modeloselecionado = modeloselecionado.options[modeloselecionado.selectedIndex].text;
+            var materialselecionado = document.getElementById("CselMaterial");
+            materialselecionado = materialselecionado.options[materialselecionado.selectedIndex].text;
+            if(materialselecionado== "---" || modeloselecionado== "---") {
+                alert("Definição do prodto não está completa!")
+            } else {
+        
+           var compraatual = document.getElementById("ClinhaProdSel").value;
+           var valoratual = document.getElementById("Cvalor").value;
+           var valortotal = document.getElementById("Ctotal").value;
+           
+        
+           if (valortotal.length==0){
+               valortotal=0;
+           }  else {
+               valortotal= parseInt(valortotal);
+           }
+           valoratual = parseInt(valoratual);
+           document.getElementById("listapedidosbig").value += compraatual + '\n'
+           document.getElementById("Ctotal").value = valoratual + valortotal;
+            }
+        }
+        
+        mudaValores(matToldo, modToldo);
+        
+        
+              
+            </script>
+    <section>
+        <form action="dados.html" method="POST">
+    <fieldset>
+    <legend>Seleção de Produtos e Lista de Compras</legend>
+    <textarea class="listaCompras"
+    name="listaPedidos" id="listapedidosbig" readonly></textarea>
+    <fieldset><legend>Selecionado</legend>
+    
+        <label for="CtipProd" class="colLabSelProd" >Produto:
+        <input type="radio" name="TtipProd" id="tipProdTol"
+            value="T" checked onchange="mudaValores(matToldo, modToldo)"/>Toldo
+        <input type="radio" name="TtipProd"
+            id="tipProdCob" value="C" onchange="mudaValores(matCober, modCober)" />Cobertura
+        </label>
+        <label class="colLabSelProd" for="CselMaterial">Material:
+                <Select name="selMaterial" class="colSelProd" id="CselMaterial" onchange="incluiVal(this)">
+                                       </select> </label>
+
+        <label class="colLabSelProd" for="CselModelo">Modelo:
+                    <Select name="selModelo" class="colSelProd" id="CselModelo" onchange="incluiVal(this)">
+                 
+                        </select> </label>
+
+                        <input class="linhaProdSel" type="text"
+    name="Prodselecionado" readonly id="ClinhaProdSel" />
+
+    <input class="elemEsq" type="button" value="Comprar" onclick="addCompra()" />
+    <label class="elemDir" for="Cvalor" >R$
+    <input type="text" name="Tvalor" id="Cvalor" readonly
+    /></label>
+
+    </fieldset>
+
+    <label class="elemDir" for="Ctotal">Total R$
+        <input type="text" class="inpMedio" name="Ttotal" id="Ctotal"  readonly
+        /></label>
+    </fieldset>
+    <div class="botoes">
+        <input type="submit" value="Continuar" />
+        <input type="reset" value="Limpar" />
+        </div>
+            </form>
+
+        </section>
+    </body>
+
+</html>

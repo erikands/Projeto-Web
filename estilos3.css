@@ -1,0 +1,286 @@
+body{
+    background-color: #DDCC99;
+    color: #332277;
+    font-size: 18px;
+    font-family: "Open Sans", "sans-serif";
+
+  }
+  header{ display:block; 
+    margin-bottom: 1px; 
+}
+nav { display:block; 
+    width: 150px; 
+    float: left; 
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: "Open Sans", "sans-serif";
+}
+section { display: block;
+    width: 76%;
+    float: right;
+    text-align: center;
+    }
+ a:link{text-decoration: none;
+    color: #332277;
+     }
+     a:visited{
+         color: #808080;
+         text-decoration: none;
+     }
+     ol{line-height: 200%;
+
+     }
+     ul{line-height: 200%;
+
+     }
+     
+nav ul { color: #332277;
+    line-height: 230%;
+    margin-top: 40px;
+    list-style-type: circle;
+
+}
+.ender {text-align: right;
+    font-size: 14px;
+    line-height: 140%;
+    float: right;
+}
+.imgLogo {
+    border-bottom: 3px solid;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+}
+.apres { text-align: center;
+    font-size: 18px;
+
+}
+
+/* estilo seção Materiais */
+
+.listMat {
+   width: 340px;
+   color: #AA0000; 
+   background-color: #EECC88;
+   padding: 10px 10px 10px 50px;
+   border: 2px solid #000055;
+   margin: 0px auto 10px auto;
+   list-style-type: upper-alpha;
+   
+}
+
+.listMat ul {
+    color: #AA0000;
+    list-style-type: square;
+}
+
+/* Estilo seção Modelos */
+
+.tabMod {
+    border-style: solid;
+    border-collapse: collapse;
+    margin: 6px auto 10px auto;
+    font-size: 14px;
+    background-color: #EEEE99;
+    color: #000066;
+    font-family: "Multi", "sans-serif";
+}
+.tabMod td, .tabMod th {border: 3px solid #226699;
+    padding: 6px 12px 6px 12px;
+    height: 30px;
+
+}
+
+.tabMod .linTH {color: #FFFFFF;
+    background-color: #33AA66;
+    vertical-align: middle;
+    text-align: center;
+
+} 
+
+.tabMod .colTH {color: #FFFFFF;
+    background-color: #1188CC;
+    text-align: left;
+
+}
+
+.tabMod .preco {color: #EE0000;
+    font-weight: bold;
+    vertical-align: middle;
+
+}
+
+
+
+/*EStilo Formulario*/
+
+form {
+    width: 540px;
+    color: #880000;
+    background-color: #EEDD99;
+    padding: 6px 6px 15px 6px;
+    font-size: 14px;
+    margin: 10px auto 10px auto;
+    border: 2px solid #000055;
+    font-family: "Multi", "sans-serif";
+}
+
+/*Elementos do Formulario*/
+
+.listaCompras {
+    width: 210px;
+    height: 190px;
+    float: right;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.colLabSelProd { width: 230px;
+height: 40px;
+float: left;
+}
+
+.colSelProd {width: 160px;
+float: right;
+}
+
+.linhaProdSel {width: 220px;
+margin-bottom: 6px;
+float: left;
+}
+
+.elemEsq {
+    display: block;
+    float: left;
+}
+.elemDir {
+    display: block;
+    float: right;
+}
+.botoes {
+    text-align: right;
+    margin: 20px 10px 0px 10px;
+}
+
+/*Fieldsets*/
+
+.fsEsq {
+    float: left;
+    display: inline;
+margin: 0px;
+}
+.fsDir {
+    float: right;
+    display: inline;
+    margin: 0px;
+}
+
+/*Valores*/
+
+.inpGrande {
+    width: 380px;
+}
+
+.impMedio {
+    width: 80px;
+}
+.impNCC {
+    width: 130px;
+}
+
+.impTelef {
+    width: 90px;
+}
+.impEnder {width: 180px;
+height: 50px;
+}
+.numDD {
+    width: 30px;
+}
+
+.numQD {
+    width: 50px;
+}
+
+/*Posicionamentos*/
+
+.divLinha {
+    width: 500px;
+    margin-bottom: 6px;
+}
+
+.colLabCrd {
+    width: 260px;
+    height: 60px;
+    float: left;
+}
+
+.colPri{
+    float: left;
+    display: block;
+    width: 90px;
+}
+
+.colPriCompras {
+    float: left;
+    display: block;
+    width: 86px;
+}
+
+.colPriPag {
+    float: left;
+    display: block;
+    width: 250px;
+}
+
+/* ad2 */
+
+/*estilos materiais */
+
+.janInfo {
+    margin: auto;
+    text-align: center;
+}
+
+.janInfoImg {
+    text-align: center;
+    margin: 30px;
+    border: 2px solid #000055 ;
+    background-color: white;
+   
+}
+
+.janInfoDetalhe {
+    text-align: left;
+    margin: 20px;
+}
+
+.precoMQ {
+    font-weight: bold;
+    color: #CC0000;
+}
+
+/* Estilos Modelos*/
+
+#titDes {
+    line-height: 60px;
+    text-align: center;
+}
+
+#prosDes {
+    line-height: 40px;
+}
+#imgDes {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #226699 ;
+    padding: 12px;
+    background-color: white;
+    
+    
+}
+
+.tabMod .imgCel {background-color: #FFFFFF;
+    vertical-align: top;
+
+}
+

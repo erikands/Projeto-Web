@@ -1,0 +1,90 @@
+<html>
+    <head>
+<title>O Toldo Poderoso</title>
+<base target="_blank"/>
+<link rel="stylesheet" type="text/css" href="estilos3.css" />
+    </head>
+<body>
+<header>
+           
+<address class="ender">Rua Tolda Coberta, 246</br>
+    Tel: (21) 91122-3344</br>
+  <a href="malito:contato@topode.com.br">contato@topode.com.br</a>
+  </address>
+  <img class="imgLogo" src="imagens/OToldoDeitado.png"/>
+</header>
+<nav>
+<ul><li><a href="Otodopode2.html">Apresentação</a></li>
+<li><a href="Materiais.html">Materiais</a></li>
+<li><a href="Modelos.html">Modelos</a></li>
+<li><a href="Pedidos.html">Pedidos</a></li></ul>
+</nav>
+
+
+<script>
+    
+    var tabMater = new Array(6);
+    tabMater[0] = ["Lona", 320, 430,
+     "Lona100", "Toldos", "35,00" ];
+     tabMater[1] = ["Polipropileno", 320, 430,
+     "Polipropileno100", "Coberturas", "210,00" ];
+     tabMater[2] = ["Policarbonato", 320, 430,
+     "Policarbonato100", "Coberturas", "250,00" ];
+     tabMater[3] = ["Técido Sintético", 320, 430,
+     "Sintetico100", "Coberturas", "65,00" ];
+     tabMater[4] = ["Tecido Acrílico", 320, 430,
+     "Acrilico100", "Toldos", "75,00" ];
+     tabMater[5] = ["Poliester", 320, 430,
+     "Poliester100", "Coberturas e Toldos", "55,00" ];
+
+    function MostraMateriais(tipo)
+    {
+     var jan = open("", tabMater[tipo][0],
+     "location=no,status=no,width=" +
+     tabMater[tipo][1] + ",height=" +
+     tabMater[tipo][2] + "");
+     with (jan.document) {
+     write("<html><head><title>O Toldo Poderoso</title>");
+     write("<link rel='stylesheet' type='text/css'");
+     write(" href='estilos3.css'>");
+     write("</head><body>");
+     write("<div class='janInfo'>");
+     write("<h2>", tabMater[tipo][0], "</h2>");
+          write("<img class='janInfoImg'src='imagens/", tabMater[tipo][3],
+     ".jpg' />");
+     write("</div>");
+        write("<p> <span class='janInfoDetalhe'> Uso: " , tabMater[tipo][4],
+     "</p> </span>");
+          write("<p> <span class='janInfoDetalhe'> Preço por m²: R$ <span class='precoMQ'>" , tabMater[tipo][5],
+     
+     "</span></span>");
+          write("<div class='janInfo'>");
+     write("<input type='button' value='Fechar' ");
+     write("onClick='window.close();'/></div>");
+     write("</form></div></body></html>");
+     close();
+     }
+    }
+    </script>
+   
+
+<section>
+<h1>Materiais</h1>
+<ol class="listMat">
+    <li><a target="_self"
+        href="javascript:MostraMateriais(0);">Lona</a> </li>
+    <li><a target="_self"
+        href="javascript:MostraMateriais(1);">Polipropileno</a></li>
+    <li><a target="_self"
+        href="javascript:MostraMateriais(2);">Policarbonato</a></li>
+    <li><a target="_self"
+        href="javascript:MostraMateriais(3);">Técido Sintético</a></li>
+    <li><a target="_self"
+        href="javascript:MostraMateriais(4);">Tecido Acrílico</a></li>
+    <li><a target="_self"
+        href="javascript:MostraMateriais(5);">Poliester</a></li>
+    </ol>
+
+    </section>
+</body>
+    </html>

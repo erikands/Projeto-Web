@@ -1,0 +1,84 @@
+<html>
+    <head>
+<title>O Toldo Poderoso</title>
+<base target="_blank"/>
+<link rel="stylesheet" type="text/css" href="estilos3.css" />
+    </head>
+<body>
+<header>
+           
+<address class="ender">Rua Tolda Coberta, 246</br>
+    Tel: (21) 91122-3344</br>
+  <a href="malito:contato@topode.com.br">contato@topode.com.br</a>
+  </address>
+  <img class="imgLogo" src="imagens/OToldoDeitado.png"/>
+</header>
+<nav>
+<ul><li><a href="Otodopode2.html">Apresentação</a></li>
+<li><a href="Materiais.html">Materiais</a></li>
+<li><a href="Modelos.html">Modelos</a></li>
+<li><a href="Pedidos.html">Pedidos</a></li></ul>
+</nav>
+
+
+<script>
+    var tabArmacao = ["Cobertura Comprida", "Cobertura Abaulada",
+    "Cobertura Triangular", "Toldo Fixo", "Toldo Retrátil", "Toldo Triangular"  ];
+    var tabModelos = ["CoberturaComprida100", "CoberturaPoliprop100",
+    "CoberturaTriangular100", "ToldoFixo100", "ToldoRetratil100", "ToldoRetratilTriangular100"  ];
+    var tabPrecos = ["360,00", "260,00", "300,00" , "320,00" , "350,00" , "330,00"];
+    function Mostra(ind) {
+     var arma = document.getElementById("titDes");
+     var foto = document.getElementById("imgDes");
+     var atpr = document.getElementById("antDes");
+     var prec = document.getElementById("proDes");
+     arma.innerHTML =  tabArmacao[ind] ;
+     foto.src = "imagens/" + tabModelos[ind] + ".png";
+     atpr.innerHTML = "Preço: R$ ";
+     prec.innerHTML = tabPrecos[ind];
+    }
+    </script>
+  
+<section>
+<h1>Modelos</h>
+    <table class="tabMod">
+<tr><th class="linTH">Produto</th>
+    <th class="linTH">Armação</th>
+    <th class="linTH" colspan="3">Modelo</th>
+</tr>
+<tr>
+    <th class="colTH" rowspan="3">Coberturas</th>
+    <td><a target="_self"
+        href="javascript:Mostra(0);">Comprida</a></td>
+    <td class="imgCel" rowspan="6"><h2 id="titDes">&nbsp;</h2><img  id="imgDes" src="imagens/vazio.jpg">
+   <p><span id="antDes">&nbsp;</span><span id="proDes" class="precoMQ">&nbsp;</span></p>
+    </td>
+    
+</tr>
+<tr>
+    <td><a target="_self"
+        href="javascript:Mostra(1);">Abaulada</a></td>
+    </tr>
+<tr>
+    <td><a target="_self"
+        href="javascript:Mostra(2);">Triangular</a></td>
+ </tr>
+<tr>
+    <th class="colTH" rowspan="3">Toldos</th>
+    <td><a target="_self"
+        href="javascript:Mostra(3);">Fixo</a></td>
+    </tr>
+<tr>
+    <td><a target="_self"
+        href="javascript:Mostra(4);">Retrátil</a></td>
+</tr>
+<tr>
+    <td><a target="_self"
+        href="javascript:Mostra(5);">Triangular</a></td>
+</tr>
+</table>
+
+
+    </section>
+</body>
+    </html>

@@ -1,0 +1,137 @@
+<html>
+    <head>
+<title>O Toldo Poderoso</title>
+<base target="_blank"/>
+<link rel="stylesheet" type="text/css" href="estilos3.css" />
+    </head>
+<body>
+<header>
+           
+<address class="ender">Rua Tolda Coberta, 246</br>
+    Tel: (21) 91122-3344</br>
+  <a href="malito:contato@topode.com.br">contato@topode.com.br</a>
+  </address>
+  <img class="imgLogo" src="imagens/OToldoDeitado.png"/>
+</header>
+<nav>
+<ul><li><a href="Otodopode2.html">Apresentação</a></li>
+<li><a href="Materiais.html">Materiais</a></li>
+<li><a href="Modelos.html">Modelos</a></li>
+<li><a href="Pedidos.html">Pedidos</a></li></ul>
+</nav>
+
+<script>
+    function VerificaTelefone( campo, tam ) {
+    var i, c;
+    var verTel = campo.value;
+    if ( verTel.length != tam ) {
+    alert( campo.name
+    + " tem de ter " +
+    tam + " dígitos!");
+    return false;
+    }
+    for ( i = 0; i < tam; i++ ) {
+    c = verTel.charAt(i);
+    if ( (c < '0') || (c > '9')) {
+    alert(campo.name
+    + " só pode ter" +
+    " dígitos, caracter ''"  + 
+    c +  "'' inválido!");
+    return false;
+    }
+    }
+    return true;
+    }
+    </script>
+
+<section>
+            <form method="POST">
+              
+                    <fieldset><legend> Identificação</legend>
+                    <div class="divLinha">
+                    <label class="colPri" for="Cnome">Nome: </label>
+                    <input type="text" class="inpGrande"
+                    name="Tnome" id="Cnome" />
+                    </div>
+                    <div class="divLinha">
+                    <label for="idEmail" class="colPri">E-mail:</label>
+                    <input id="Cemail" class="inpGrande"
+                    type="email" name="Temail" required />
+                    </div>
+                    <div class="divLinha">
+                    <label class="colPri" for="Cender">Endereço: </label>
+                    <textarea name="Tender" id="Cender" rows="2" class="impEnder"></textarea>
+                    
+                    <fieldset class="fsDir"><legend>Genero:</legend>
+                    <label for="Cmas"><input type="radio" name="Tsexo"
+                    value="M" checked id="Cmas" />Mas</label>
+                    <label for="Cfem"><input type="radio" name="Tsexo" id="Cfem"
+                    value="F" />Fem</label>
+                    <label for="Coutro"><input type="radio" name="Tsexo" id="Coutro"
+                    value="O" />Outro</label>
+                    </fieldset>
+                    </div>
+                    
+                    <fieldset class="fsDir"><legend>Nascimento:</legend>
+                    <input type="number" name="Tdianasc"
+                    min="1" max="31" class="numDD" /> /
+                    <input type="number" name="Tmesmasc"
+                    min="1" max="12" class="numDD" /> /
+                    <input type="number" name="Tanonasc" 
+                    min="1920" max="2019" class="numQD" />
+                    </fieldset>
+               
+                    <div class="divLinha">
+                    <label class="colPri" for="Ctelefone">Telefone:</label>
+                    <input type="text" class="impTelef" onchange="VerificaTelefone(this, 8);"
+                    name="Telefone" id="Ctelefone" required />
+                    </div>
+                    <div class="divLinha">
+                    <label class="colPri" for="Ccelular">Celular:</label>
+                    <input type="text" class="impTelef" onchange="VerificaTelefone(this, 9);"
+   name="Celular" id="Ccelular" />
+                    </div>
+   </fieldset>
+
+<fieldset>
+  <legend>Pagamento</legend>
+    <textarea class="listaCompras" name="Tlistapedido" id="Clistapedido" readonly>
+ </textarea>
+
+ <fieldset class="fsEsq">
+    <legend>Cartão</legend>
+    <div>
+    <legend class="elemEsq"> Bandeira:</legend>
+<label for="Cvisa"><input type="radio" name="Tbandeiracc" id="Cvisa"checked />Visa</label>
+<label for="Cmaster"><input type="radio" name="Tbandeiracc" id="Cmaster"/>Master</label>
+<label for="Celo"><input type="radio" name="Tbandeiracc" id="Celo"/>Elo</label>
+</div>
+<br/><br/>
+<div>
+    <label class="colPriCompras" for="Cmesval">Validade:</label>
+    <input type="number" name="Tmesval" id="Cmesval"
+    min="1" max="12" class="numDD" value="10" /> /
+    <input type="number" name="Tanoval" id="Canoval" value="2020"
+    min="2020" max="2030" class="numQD" /></div>
+    <br/><br/>
+    <div>
+       <label class="colPriCompras" for="Cnumcc">Número:</label>
+    <input type=text name="Tnumcc"
+    class="inpNCC" id="Cnumcc"/>
+    </div>
+<br/><br/><br/>
+</fieldset>
+
+<label class="elemDir" for="Ctotal"><br/>Valor R$
+    <input type="text" name="Ttotal" readonly
+    id="Ctotal" class="inpMedio" /></label>
+ </fieldset>
+ <div class="botoes">
+    <input type="submit" value="Enviar" />
+    <input type="reset" value="Limpar" />
+    </div>
+        </form>
+
+    </section>
+</body>
+    </html>
